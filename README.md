@@ -1,5 +1,5 @@
 # VALOR: Vision-Audio-Language Omni-Perception Pretraining Model and Dataset
-This is the official repository of VALOR which provide training&testing code and pretraining checkpoints. For a comprehensive explaining of VALOR model and dataset, please visit our [project page]().
+This is the official repository of VALOR which provide training&testing code and pretraining checkpoints. For a comprehensive explaining of VALOR model and dataset, please visit our [project page](https://casia-iva-group.github.io/projects/VALOR).
 
 
 ## Building Environment
@@ -17,9 +17,9 @@ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cud
 - setup packages.
 
 ## Download Checkpoints
-- pretrained_weights (BERT,CLIP,VideoSwin)
+- [pretrained_weights](https://drive.google.com/file/d/1KyqOzQIzNcL1Q9uEGmDECHfU-8CCd4kk/view?usp=sharing) (BERT,CLIP,VideoSwin).
 Put pretrained_weights dir under main path. (VALOR/pretrained_weights)
-- VALOR-base
+- [VALOR-base](https://drive.google.com/file/d/1MgwcFqOg-0J7ePRhLIIaHTyPvgWM70d0/view?usp=sharing).
 Put VALOR-base  under the output dir. (VALOR/output/VALOR-base)
 
 ## Prepare Datasets
@@ -61,7 +61,7 @@ The processed  dataset path should be following:
     │   │   ├── txt_mapper_vqa.json    
     │   │   └── caption_annotation.json    
 ```
-We provide processed json files for most finetuneing datasets in here, and you only need to download and extract raw videos of each dataset.
+We provide processed json files for most finetuneing datasets [here](https://drive.google.com/file/d/1pWym3bMNW_WrOZCi5Ls-wKFpaPMbLOio/view?usp=sharing), and you only need to download and extract raw videos of each dataset.
 
 
 ## Finetune  Model
