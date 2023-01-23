@@ -1,0 +1,86 @@
+{
+    "output_dir": "",
+    "video_resolution":224,
+    "audio_melbins": 64,
+    "audio_patch_size" : 16,
+    "audio_mean":-4.2677393,
+    "audio_std": 4.5689974,
+    "audio_frame_shift":10,
+    "audio_target_length":512,
+    "video_encoder_type":"clip_vit_base_16",
+    "txt_encoder_type":"clip_vit_base_16",
+    "multimodal_encoder_type":"bert_base_uncased",
+    "share_txt_and_multimodal":true,
+    "audio_encoder_type":"ast",
+    "contra_type":"fine",
+    "caption_type":"unimlm",
+    "multimodal_use_cross_attn":true,
+    "feature_pooling_type":"none",
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 1e-04,
+    "optim": "adamw",
+    "betas": [
+        0.9,
+        0.98
+    ],
+    "weight_decay": 0.01,
+    "grad_norm": 5.0,
+    "warmup_ratio": 0.1,
+    "seed": 50,
+    "fp16": true,
+    "pin_mem": true,
+    "data_cfg":{"train":  
+                        [
+                            
+                         {"datasets":
+                          [{"name": "webvid",
+                          "ids_path": "./datasets/webvid/train_id.json",
+                          "txt": "./datasets/webvid/txt_mapper_clean.json",
+                          "video": "./datasets/webvid/webvid_frames_10/train",
+                              "datatype": "video"}],
+                              "video_sample_num": 4, 
+                              "max_txt_len":40,
+                              "task" : "pt_contra%tv_caption%tv",
+                              "epoch": 30,
+                              "n_workers":4,
+                              "batch_size": 512},
+                          {"datasets":
+                            [{"name": "cc3m",
+                              "ids_path": "./datasets/cc3m/train_id.json",
+                              "txt": "./datasets/cc3m/txt_mapper.json",
+                              "video": "./datasets/cc3m/training",
+                              "datatype": "image"}],
+                              "max_txt_len":40,
+                                "task" : "pt_contra%tv_caption%tv",
+                                "epoch": 30,
+                                "n_workers":4,
+                                "batch_size": 512}
+                         ],
+                    
+                "val":                
+                    [
+                        {
+                            "name": "webvid",
+                            "ids_path": "./datasets/webvid/val_id.json",
+                            "txt": "./datasets/webvid/txt_mapper_clean.json",
+                            "video": "./datasets/webvid/webvid_frames_10/train",
+                            "datatype": "video", 
+                            "video_sample_num": 1,
+                            "max_txt_len":40,
+                            "n_workers":4,
+                            "task" : "pt_contra%tv_caption%tv",
+                            "batch_size": 1024 
+                         },
+                        
+                         {
+                            "name": "cc3m",
+                            "ids_path": "./datasets/cc3m/val_id.json",
+                            "txt": "./datasets/cc3m/txt_mapper.json",
+                            "video": "./datasets/cc3m/training",
+                            "datatype": "image", 
+                            "max_txt_len":40,
+                            "n_workers":4,
+                            "task" : "pt_contra%tv_caption%tv",
+                            "batch_size": 1024 
+                         }
+                        ]}}

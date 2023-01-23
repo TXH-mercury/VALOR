@@ -1,0 +1,49 @@
+{
+    "output_dir": "",
+    "video_resolution":224,
+    "audio_melbins": 64,
+    "audio_patch_size" : 16,
+    "audio_mean":-4.2677393,
+    "audio_std": 4.5689974,
+    "audio_frame_shift":10,
+    "audio_target_length":512,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 1e-04,
+    "optim": "adamw",
+    "betas": [
+        0.9,
+        0.98
+    ],
+    "weight_decay": 0.01,
+    "grad_norm": 5.0,
+    "warmup_ratio": 0.1,
+    "seed": 50,
+    "fp16": true,
+    "pin_mem": true,
+    "data_cfg":{"train":  
+                        [{"datasets":
+                            [{"name": "vqav2_train",
+                          "ids_path": "./datasets/mscoco/vqav2/trainval2014_3129.json",
+                          "txt": "./datasets/mscoco/vqav2/txt_mapper_vqa_3129.json",
+                          "video": "./datasets/mscoco/train2014/",
+                          "datatype": "image"}],
+                          "max_txt_len":30,
+                          "task" : "qa%tv",
+                          "epoch": 50,
+                          "n_workers":8,
+                          "batch_size": 256}
+                          ],
+                "val":                
+                    [{
+                        "name": "vqav2_std",
+                        "ids_path": "./datasets/mscoco/vqav2/test2015std.json",
+                          "txt": "./datasets/mscoco/vqav2/txt_mapper_vqa_std.json",
+                          "video": "./datasets/mscoco/test2015/",
+                        "datatype": "image",  
+                        "max_txt_len":30,
+                        "task" : "qa%tv",
+                        "n_workers": 8,
+                        "batch_size": 256,
+                        "answer_candidate":"./datasets/mscoco/vqav2/candidate_answers_3129.json" 
+                     }
+                     ]}}

@@ -1,0 +1,52 @@
+{
+    "output_dir": "",
+    "video_resolution":224,
+    "audio_melbins": 64,
+    "audio_patch_size" : 16,
+    "audio_mean":-4.2677393,
+    "audio_std": 4.5689974,
+    "audio_frame_shift":10,
+    "audio_target_length":512,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 1e-04,
+    "optim": "adamw",
+    "betas": [
+        0.9,
+        0.98
+    ],
+    "weight_decay": 0.01,
+    "grad_norm": 5.0,
+    "warmup_ratio": 0.1,
+    "seed": 50,
+    "fp16": true,
+    "pin_mem": true,
+    "data_cfg":{"train":  
+                        [{"datasets":
+                            [{"name": "music_qa",
+                          "ids_path": "./datasets/music-avqa/train_id_vqa.json",
+                          "txt": "./datasets/music-avqa/txt_mapper_vqa_train.json",
+                          "video": "./datasets/music-avqa/frames_1fps/",
+                          "audio": "./datasets/music-avqa/audio_22050hz/",
+                          "datatype": "video"}],
+                          "video_sample_num": 4,
+                          "audio_sample_num": 2,
+                          "max_txt_len":30,
+                          "task" : "qa%tva%tv",
+                          "epoch": 50,
+                          "n_workers":8,
+                          "batch_size": 64}],
+                "val":                
+                    [{
+                        "name": "music_qa",
+                        "ids_path": "./datasets/music-avqa/test_id_vqa.json",
+                        "txt": "./datasets/music-avqa/txt_mapper_vqa_test.json",
+                        "video": "./datasets/music-avqa/frames_1fps/",
+                        "audio": "./datasets/music-avqa/audio_22050hz/",
+                        "datatype": "video",  
+                        "video_sample_num": 4,
+                        "audio_sample_num": 2,
+                        "max_txt_len":30,
+                        "task" : "qa%tva%tv",
+                        "n_workers": 8,
+                        "batch_size": 64 
+                     }]}}
