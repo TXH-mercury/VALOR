@@ -1,12 +1,13 @@
 # ctags
 tags
-
+apex/build
 aic_caption/
 cococaption/pycocoevalcap/spice
 output/
 ouptut/
 datasets/
 lpips/
+upload/
 __pycache__
 UVG/evaluation
 gen_evaluation

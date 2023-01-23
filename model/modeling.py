@@ -614,21 +614,15 @@ class VALORModel(VALORPreTrainedModel):
         
         from model.bert import BertModel, BertConfig
         bert_base_config = BertConfig.from_json_file("./pretrained_weights/bert_base_uncased_config.json")
-        bert_large_config = BertConfig.from_json_file("./pretrained_weights/bert_large_uncased_config.json")
+        
         if self.multimodal_encoder_type == 'bert_base_uncased':
             #bertconfig = BertConfig.from_json_file("./pretrained_weights/bert_base_uncased_config.json")
             bertconfig = bert_base_config
             bert_weight = torch.load('./pretrained_weights/bert-base-uncased.bin',map_location='cpu')
             self.multimodal_dim = 768
-        elif self.multimodal_encoder_type == 'bert_base_chinese':
-            bertconfig = BertConfig.from_json_file("./pretrained_weights/bert_base_chinese_config.json")
-            bert_weight = torch.load('./pretrained_weights/bert-base-chinese.bin',map_location='cpu')
-            self.multimodal_dim = 768
-        elif self.multimodal_encoder_type == 'bert_large_uncased':
-            #bertconfig = BertConfig.from_json_file("./pretrained_weights/bert_large_uncased_config.json")
-            bertconfig = bert_large_config
-            bert_weight = torch.load('./pretrained_weights/bert-large-uncased.bin',map_location='cpu')
-            self.multimodal_dim = 1024
+
+        else:
+            raise NotImplementedError()
                  
         bertconfig.checkpointing = config.checkpointing
 

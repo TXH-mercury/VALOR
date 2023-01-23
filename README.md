@@ -1,262 +1,140 @@
-# OPT: UNiversal Image-TExt Representation Learning
-This is the official repository of [OPT](https://arxiv.org/abs/1909.11740) (ECCV 2020).
-This repository currently supports finetuning OPT on
-[NLVR2](http://lil.nlp.cornell.edu/nlvr/), [VQA](https://visualqa.org/), [VCR](https://visualcommonsense.com/),
-[SNLI-VE](https://github.com/necla-ml/SNLI-VE), 
-Image-Text Retrieval for [COCO](https://cocodataset.org/#home) and
-[Flickr30k](http://shannon.cs.illinois.edu/DenotationGraph/), and
-[Referring Expression Comprehensions](https://github.com/lichengunc/refer) (RefCOCO, RefCOCO+, and RefCOCO-g).
-Both OPT-base and OPT-large pre-trained checkpoints are released.
-OPT-base pre-training with in-domain data is also available.
-
-![Overview of OPT](https://acvrpublicycchen.blob.core.windows.net/opt/opt_overview_v2.png)
-
-Some code in this repo are copied/modified from opensource implementations made available by
-[PyTorch](https://github.com/pytorch/pytorch),
-[HuggingFace](https://github.com/huggingface/transformers),
-[OpenNMT](https://github.com/OpenNMT/OpenNMT-py),
-and [Nvidia](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch).
-The image features are extracted using [BUTD](https://github.com/peteanderson80/bottom-up-attention).
+# VALOR: Vision-Audio-Language Omni-Perception Pretraining Model and Dataset
+This is the official repository of VALOR which provide training&testing code and pretraining checkpoints. For a comprehensive explaining of VALOR model and dataset, please visit our [project page]().
 
 
-## Requirements
-We provide Docker image for easier reproduction. Please install the following:
-  - [nvidia driver](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation) (418+), 
-  - [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) (19.03+), 
-  - [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart).
+## Building Environment
+VALOR is implemented based on Pytorch. We use pytorch-1.9.0 and cuda-11.1. Other version could be also compatible.
 
-Our scripts require the user to have the [docker group membership](https://docs.docker.com/install/linux/linux-postinstall/)
-so that docker commands can be run without sudo.
-We only support Linux with NVIDIA GPUs. We test on Ubuntu 18.04 and V100 cards.
-We use mixed-precision training hence GPUs with Tensor Cores are recommended.
-
-## Quick Start
-*NOTE*: Please run `bash scripts/download_pretrained.sh $PATH_TO_STORAGE` to get our latest pretrained
-checkpoints. This will download both the base and large models.
-
-We use NLVR2 as an end-to-end example for using this code base.
-
-1. Download processed data and pretrained models with the following command.
-    ```bash
-    bash scripts/download_nlvr2.sh $PATH_TO_STORAGE
-    ```
-    After downloading you should see the following folder structure:
-    ```
-    ├── ann
-    │   ├── dev.json
-    │   └── test1.json
-    ├── finetune
-    │   ├── nlvr-base
-    │   └── nlvr-base.tar
-    ├── img_db
-    │   ├── nlvr2_dev
-    │   ├── nlvr2_dev.tar
-    │   ├── nlvr2_test
-    │   ├── nlvr2_test.tar
-    │   ├── nlvr2_train
-    │   └── nlvr2_train.tar
-    ├── pretrained
-    │   └── opt-base.pt
-    └── txt_mapper
-        ├── nlvr2_dev.db
-        ├── nlvr2_dev.db.tar
-        ├── nlvr2_test1.db
-        ├── nlvr2_test1.db.tar
-        ├── nlvr2_train.db
-        └── nlvr2_train.db.tar
-    ```
-
-2. Launch the Docker container for running the experiments.
-    ```bash
-    # docker image should be automatically pulled
-    source launch_container.sh $PATH_TO_STORAGE/txt_mapper $PATH_TO_STORAGE/img_db \
-        $PATH_TO_STORAGE/finetune $PATH_TO_STORAGE/pretrained
-    ```
-    The launch script respects $CUDA_VISIBLE_DEVICES environment variable.
-    Note that the source code is mounted into the container under `/src` instead 
-    of built into the image so that user modification will be reflected without
-    re-building the image. (Data folders are mounted into the container separately
-    for flexibility on folder structures.)
-
-
-3. Run finetuning for the NLVR2 task.
-    ```bash
-    # inside the container
-    python train_nlvr2.py --config config/train-nlvr2-base-1gpu.json
-
-    # for more customization
-    horovodrun -np $N_GPU python train_nlvr2.py --config $YOUR_CONFIG_JSON
-    ```
-
-4. Run inference for the NLVR2 task and then evaluate.
-    ```bash
-    # inference
-    python inf_nlvr2.py --txt_mapper /txt/nlvr2_test1.db/ --img_db /img/nlvr2_test/ \
-        --train_dir /storage/nlvr-base/ --ckpt 6500 --output_dir . --fp16
-
-    # evaluation
-    # run this command outside docker (tested with python 3.6)
-    # or copy the annotation json into mounted folder
-    python scripts/eval_nlvr2.py ./results.csv $PATH_TO_STORAGE/ann/test1.json
-    ```
-    The above command runs inference on the model we trained. Feel free to replace
-    `--train_dir` and `--ckpt` with your own model trained in step 3.
-    Currently we only support single GPU inference.
-
-
-5. Customization
-    ```bash
-    # training options
-    python train_nlvr2.py --help
-    ```
-    - command-line argument overwrites JSON config files
-    - JSON config overwrites `argparse` default value.
-    - use horovodrun to run multi-GPU training
-    - `--gradient_accumulation_steps` emulates multi-gpu training
-
-
-6. Misc.
-    ```bash
-    # text annotation preprocessing
-    bash scripts/create_txtdb.sh $PATH_TO_STORAGE/txt_mapper $PATH_TO_STORAGE/ann
-
-    # image feature extraction (Tested on Titan-Xp; may not run on latest GPUs)
-    bash scripts/extract_imgfeat.sh $PATH_TO_IMG_FOLDER $PATH_TO_IMG_NPY
-
-    # image preprocessing
-    bash scripts/create_imgdb.sh $PATH_TO_IMG_NPY $PATH_TO_STORAGE/img_db
-    ```
-    In case you would like to reproduce the whole preprocessing pipeline.
-
-## Downstream Tasks Finetuning
-
-### VQA
-NOTE: train and inference should be ran inside the docker container
-1. download data
-    ```
-    bash scripts/download_vqa.sh $PATH_TO_STORAGE
-    ```
-2. train
-    ```
-    horovodrun -np 4 python train_vqa.py --config config/train-vqa-base-4gpu.json \
-        --output_dir $VQA_EXP
-    ```
-3. inference
-    ```
-    python inf_vqa.py --txt_mapper /txt/vqa_test.db --img_db /img/coco_test2015 \
-        --output_dir $VQA_EXP --checkpoint 6000 --pin_mem --fp16
-    ```
-    The result file will be written at `$VQA_EXP/results_test/results_6000_all.json`, which can be
-    submitted to the evaluation server
-
-### VCR
-NOTE: train and inference should be ran inside the docker container
-1. download data
-    ```
-    bash scripts/download_vcr.sh $PATH_TO_STORAGE
-    ```
-2. train
-    ```
-    horovodrun -np 4 python train_vcr.py --config config/train-vcr-base-4gpu.json \
-        --output_dir $VCR_EXP
-    ```
-3. inference
-    ```
-    horovodrun -np 4 python inf_vcr.py --txt_mapper /txt/vcr_test.db \
-        --img_db "/img/vcr_gt_test/;/img/vcr_test/" \
-        --split test --output_dir $VCR_EXP --checkpoint 8000 \
-        --pin_mem --fp16
-    ```
-    The result file will be written at `$VCR_EXP/results_test/results_8000_all.csv`, which can be
-    submitted to VCR leaderboard for evluation.
-
-### VCR 2nd Stage Pre-training
-NOTE: pretrain should be ran inside the docker container
-1. download VCR data if you haven't
-    ```
-    bash scripts/download_vcr.sh $PATH_TO_STORAGE
-    ```
-2. 2nd stage pre-train
-    ```
-    horovodrun -np 4 python pretrain_vcr.py --config config/pretrain-vcr-base-4gpu.json \
-        --output_dir $PRETRAIN_VCR_EXP
-    ```
-
-### Visual Entailment (SNLI-VE)
-NOTE: train should be ran inside the docker container
-1. download data
-    ```
-    bash scripts/download_ve.sh $PATH_TO_STORAGE
-    ```
-2. train
-    ```
-    horovodrun -np 2 python train_ve.py --config config/train-ve-base-2gpu.json \
-        --output_dir $VE_EXP
-    ```
-
-### Image-Text Retrieval
-download data
 ```
-bash scripts/download_itm.sh $PATH_TO_STORAGE
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-NOTE: Image-Text Retrieval is computationally heavy, especially on COCO.
-#### Zero-shot Image-Text Retrieval (Flickr30k)
-```
-# every image-text pair has to be ranked; please use as many GPUs as possible
-horovodrun -np $NGPU python inf_itm.py \
-    --txt_mapper /txt/itm_flickr30k_test.db --img_db /img/flickr30k \
-    --checkpoint /pretrain/opt-base.pt --model_cfg /src/config/opt-base.json \
-    --output_dir $ZS_ITM_RESULT --fp16 --pin_mem
-```
-#### Image-Text Retrieval (Flickr30k)
-- normal finetune
-    ```
-    horovodrun -np 8 python train_itm.py --config config/train-itm-flickr-base-8gpu.json
-    ```
-- finetune with hard negatives
-    ```
-    horovodrun -np 16 python train_itm_hard_negatives.py \
-        --config config/train-itm-flickr-base-16gpu-hn.jgon
-    ```
-#### Image-Text Retrieval (COCO)
-- finetune with hard negatives
-    ```
-    horovodrun -np 16 python train_itm_hard_negatives.py \
-        --config config/train-itm-coco-base-16gpu-hn.json
-    ```
-### Referring Expressions
-1. download data
-    ```
-    bash scripts/download_re.sh $PATH_TO_STORAGE
-    ```
-2. train
-    ```
-    python train_re.py --config config/train-refcoco-base-1gpu.json \
-        --output_dir $RE_EXP
-    ```
-3. inference and evaluation
-    ```
-    source scripts/eval_refcoco.sh $RE_EXP
-    ```
-    The result files will be written under `$RE_EXP/results_test/`
 
-Similarly, change corresponding configs/scripts for running RefCOCO+/RefCOCOg.
+- apex is needed. 
+```
+cd apex
+pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+```
+- setup packages.
 
+## Download Checkpoints
+- pretrained_weights (BERT,CLIP,VideoSwin)
+Put pretrained_weights dir under main path. (VALOR/pretrained_weights)
+- VALOR-base
+Put VALOR-base  under the output dir. (VALOR/output/VALOR-base)
 
-## Pre-tranining
-download
+## Prepare Datasets
+VALOR is pretrained and tested on multiple vision-language, audio-language and audiovisual-language datasets. 
+e.g. PRETRAIN: VALOR-1M, WebVid-2.5M, CC-3M (VALOR-base)
+TEST: VALOR-32K, MSRVTT, MSVD, DiDeMo, LSMDC, ActivityNet, VATEX, AudioCaps, ClothoV1, TGIF-Frame, MSCOCO, VQAV2...
+We here take MSRVTT as an example to show the data processing procedures, other datasets take a similar way.
+
+- make dir VALOR/datasets/MSRVTT
+- download raw videos from website, and put them in MSRVTT/raw_videos
+- extract video frames (.jpg) and audio files (.wav). Utilizing utils/extract_frame_and_wav_multiprocess.py (Note: VALOR use this offline extracted frames and audios for training and testing for it's fast I/O speed. You may adjust to read raw videos via decord library, and need to change VideoMapper and AudioMapper classes in data/data.py.)
+- prepare id_files (standardsplit_train_id.json, standardsplit_test_id.json, 1KAsplit_train_id.json, 1KAsplit_test_id.json). The format is List(Str) ['video0', 'video1', ...]. The former two are for video captioning and video qa, while the latter two are for video retrieval.  
+- prepare txt_mapper.json. txt_mapper files map videoIDs to its descriptions. Format {'video0':['desc1','desc2',...'desc20']}. For VideoQA task, the format is {'video0':[{'question':'what color is ...?', 'answer':'red'},{'question':'Is the boy ...?', 'answer':'yes'}]}
+- prepare caption_annotation.json. This file is used for computing caption metrics. format: [{'video_id':'video0','caption','A boy is ...'}, {'video_id':'video1','caption','A girl is ...'}]
+
+The processed  dataset path should be following:
+ ```
+    ├── datasets
+    │   ├── msrvtt
+    │   │   ├── raw_videos
+    │   │   │    ├── video0.mp4
+    │   │   │    └── video1.mp4
+    │   │   ├── frames_fps4
+    │   │   │    ├── video0
+    │   │   │    │   ├──img_0001.jpg
+    │   │   │    │   └──img_0002.jpg
+    │   │   │    └── video1
+    │   │   │    │   ├──img_0001.jpg
+    │   │   │    │   └──img_0002.jpg
+    │   │   ├── audio_22050hz
+    │   │   │    ├── video1.wav
+    │   │   │    └── video3.wav
+    │   │   ├── standardsplit_train_id.json
+    │   │   ├── standardsplit_test_id.json
+    │   │   ├── 1KAsplit_train_id.json
+    │   │   ├── 1KAsplit_test_id.json
+    │   │   ├── txt_mapper.json
+    │   │   ├── txt_mapper_1kAsplit_test.json    
+    │   │   ├── txt_mapper_vqa.json    
+    │   │   └── caption_annotation.json    
 ```
-bash scripts/download_indomain.sh $PATH_TO_STORAGE
-```
-pre-train
-```
-horovodrun -np 8 python pretrain.py --config config/pretrain-indomain-base-8gpu.json \
-    --output_dir $PRETRAIN_EXP
-```
-Unfortunately, we cannot host CC/SBU features due to their large size. Users will need to process
-them on their own. We will provide a smaller sample for easier reference to the expected format soon.
+We provide processed json files for most finetuneing datasets in here, and you only need to download and extract raw videos of each dataset.
 
 
+## Finetune  Model
+- finetune retrieval tasks
+```
+sh scripts/finetune_ret.sh $pretrain_path(output/VALOR_base)
+```
+- finetune captioning tasks
+```
+sh scripts/finetune_cap.sh $pretrain_path(output/VALOR_base)
+```
+- finetune QA tasks
+```
+sh scripts/finetune_qa.sh $pretrain_path(output/VALOR_base)
+```
+The finetuning output path will be the subdir of $pretrain_path
+
+## Test Model
+For example, the cmd for finetuning retrieval model  in scripts/finetune_ret.sh is as follows:
+
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --nproc_per_node=8   --master_port 32711 ./train.py \
+--pretrain_dir $basedir \
+--config ./config/fast-retrieval-msrvtt.json \
+--output_dir $basedir'/ret-msrvtt-lr2e-5-bs64-epoch5'   \
+--learning_rate 2e-5  \
+--train_video_sample_num 4 \
+--test_video_sample_num 8  \
+--save_best true \
+```
+
+if you want to test model, just add following two rows to the cmd:
+```
+--zero_shot \
+--checkpoint $checkpoint_save_path(.pt)
+```
+## Pretrain Model
+```
+sh scripts/pretrain.sh
+```
+
+
+## Customize
+VALOR's framework is very very easy to expand new tasks/datasets. what you need to do is 
+
+1. prepare dataset as illustrated above
+2. write config file (copy a config file and change 'data_cfg')
+
+- In development stage, you can simply use cmd to overwrite config file. The most important args are :
+--learning_rate
+--train_batch_size
+--train_video_sample_num
+--test_video_sample_num
+--train_audio_sample_num
+--test_audio_sample_num
+--video_resolution
+--train_epoch
+--train_task
+--test_task
+
+- To control task and used modality group, you can rewrite train_task by 'task%modality_group1%modality_group2'
+For example: finetuning text-to-audio retrieval  'ret%ta' 
+             finetuning text-to-video retrieval  'ret%tv' or 'ret%tva' 
+             
+
+- Other settings
+--fp16 (default: close)
+--checkpointing (default: open)
+
+
+
+
+<!-- 
 ## Citation
 
 If you find this code useful for your research, please consider citing:
@@ -271,4 +149,4 @@ If you find this code useful for your research, please consider citing:
 
 ## License
 
-MIT
+MIT -->
