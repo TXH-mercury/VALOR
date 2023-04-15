@@ -105,7 +105,7 @@ sh scripts/pretrain.sh
 
 
 ## Customize
-VALOR's framework is very very easy to expand new tasks/datasets. what you need to do is 
+VALOR's framework is easy to expand new tasks/datasets. what you need to do is 
 
 1. prepare dataset as illustrated above
 2. write config file (copy a config file and change 'data_cfg')
@@ -139,12 +139,7 @@ For example: finetuning text-to-audio retrieval  'ret%ta'
 
 If you find this code useful for your research, please consider citing:
 ```
-@inproceedings{chen2020opt,
-  title={OPT: Universal image-text representation learning},
-  author={Chen, Yen-Chun and Li, Linjie and Yu, Licheng and Kholy, Ahmed El and Ahmed, Faisal and Gan, Zhe and Cheng, Yu and Liu, Jingjing},
-  booktitle={ECCV},
-  year={2020}
-}
+
 ```
 
 ## License
