@@ -19,8 +19,11 @@ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cud
 ## Download Checkpoints
 - [pretrained_weights](https://drive.google.com/file/d/1KyqOzQIzNcL1Q9uEGmDECHfU-8CCd4kk/view?usp=sharing) (BERT,CLIP,VideoSwin).
 Put pretrained_weights dir under main path. (VALOR/pretrained_weights)
-- [VALOR-base](https://drive.google.com/file/d/1MgwcFqOg-0J7ePRhLIIaHTyPvgWM70d0/view?usp=sharing).
+- [VALOR-base](https://drive.google.com/file/d/1l-G255vTPt6XKMK-Ln42Jz_raGzipL84/view?usp=sharing).
 Put VALOR-base  under the output dir. (VALOR/output/VALOR-base)
+- [VALOR-large](https://drive.google.com/file/d/1qFb9ejO-FLUTfZQkW_IFJrFEWyxjs72k/view?usp=sharing).
+Put VALOR-large  under the output dir. (VALOR/output/VALOR-large)
+
 
 ## Prepare Datasets
 VALOR is pretrained and tested on multiple vision-language, audio-language and audiovisual-language datasets. 
