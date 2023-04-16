@@ -1,6 +1,9 @@
 # VALOR: Vision-Audio-Language Omni-Perception Pretraining Model and Dataset
-This is the official repository of VALOR which provide training&testing code and pretraining checkpoints. For a comprehensive explaining of VALOR model and dataset, please visit our [project page](https://casia-iva-group.github.io/projects/VALOR).
-
+- This is the official repository of VALOR which provides training&testing code and pretraining checkpoints.
+- VALOR-32K dataset can be downloaded from  [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
+- VALOR-1m will be released soon.
+- Paper w/o audio files embeded in PDF is on Arxiv.
+- Paper w audio files embeded in PDF can be found on [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
 
 ## Building Environment
 VALOR is implemented based on Pytorch. We use pytorch-1.9.0 and cuda-11.1. Other version could be also compatible.
