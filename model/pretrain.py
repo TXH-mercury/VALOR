@@ -4,7 +4,6 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 from apex.normalization.fused_layer_norm import FusedLayerNorm as LayerNorm
-from transformers import CTRL_PRETRAINED_MODEL_ARCHIVE_LIST
 import json
 import torch.distributed as dist
 from .modeling import VALORModel, VALORPreTrainedModel
