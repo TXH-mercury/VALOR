@@ -15,8 +15,6 @@ from torchvision.transforms.transforms import *
 from torchvision import transforms
 import random
 from os.path import join 
-from decord import VideoReader, AudioReader
-# import av
 import os
 import torchaudio
 from PIL import Image
@@ -31,10 +29,8 @@ import torch.nn.functional as F
 punctuation = string.punctuation
 import numpy as np
 from torchvision.transforms import functional as transform_F
-# from torchvision.transforms import RandAugment
-from torchlibrosa.stft import Spectrogram, LogmelFilterBank
-import librosa
-# from model.prompt_template import templates
+
+
 
 
 
