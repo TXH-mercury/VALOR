@@ -14,10 +14,14 @@ pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f ht
 
 - apex is needed. 
 ```
+git clone https://github.com/NVIDIA/apex
 cd apex
 pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
-- setup packages.
+- isntall needed packages.
+```
+sh preinstall.sh
+```
 
 ## Download Checkpoints
 - [pretrained_weights](https://drive.google.com/file/d/1KyqOzQIzNcL1Q9uEGmDECHfU-8CCd4kk/view?usp=sharing) (BERT,CLIP,VideoSwin).
