@@ -1,3 +1,6 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-activitynet)](https://paperswithcode.com/sota/video-retrieval-on-activitynet?p=valor-vision-audio-language-omni-perception)
+
+
 # VALOR: Vision-Audio-Language Omni-Perception Pretraining Model and Dataset
 - This is the official repository of VALOR which provides training&testing code and pretraining checkpoints.
 - VALOR-32K dataset can be downloaded from  [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
