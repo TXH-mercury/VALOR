@@ -83,6 +83,7 @@
 - VALOR-1m will be released soon.
 - Paper w/o audio files embeded in PDF is on [Arxiv](https://arxiv.org/abs/2304.08345).
 - Paper w audio files embeded in PDF can be found on [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
+- In two months, we will open-source a stronger model and a better framework.
 
 ## Building Environment
 - VALOR is implemented based on Pytorch. We use pytorch-1.9.0 and cuda-11.1. Other version could be also compatible.
@@ -124,7 +125,7 @@ We here take MSRVTT as an example to show the data processing procedures, other 
 - prepare txt_mapper.json. txt_mapper files map videoIDs to its descriptions. Format {'video0':['desc1','desc2',...'desc20']}. For VideoQA task, the format is {'video0':[{'question':'what color is ...?', 'answer':'red'},{'question':'Is the boy ...?', 'answer':'yes'}]}
 - prepare caption_annotation.json. This file is used for computing caption metrics. format: [{'video_id':'video0','caption','A boy is ...'}, {'video_id':'video1','caption','A girl is ...'}]
 
-The processed  dataset path should be following:
+The processed  dataset path should be as follows:
  ```
     ├── datasets
     │   ├── msrvtt
