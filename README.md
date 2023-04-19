@@ -32,7 +32,7 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-question-answering-on-activitynet-qa)](https://paperswithcode.com/sota/video-question-answering-on-activitynet-qa?p=valor-vision-audio-language-omni-perception)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-video-question-answering-avqa-on-music)](https://paperswithcode.com/sota/audio-video-question-answering-avqa-on-music?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-visual-question-answering-on-music-avqa)](https://paperswithcode.com/sota/audio-visual-question-answering-on-music-avqa?p=valor-vision-audio-language-omni-perception)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/text-to-audiovisual-retrieval-on-valor-32k)](https://paperswithcode.com/sota/text-to-audiovisual-retrieval-on-valor-32k?p=valor-vision-audio-language-omni-perception)
 
