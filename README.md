@@ -217,8 +217,8 @@ For example: finetuning text-to-audio retrieval  'ret%ta'
              
 
 - Other settings
---fp16 (default: close)
---checkpointing (default: open)
+--fp16 (default: True)
+--checkpointing (default: False)
 
 
 
