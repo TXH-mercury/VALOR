@@ -224,10 +224,11 @@ For example: finetuning text-to-audio retrieval  'ret%ta'
 
 
 
-
-Citation
+## Citation
 
 If you find this code useful for your research, please consider citing:
+
+
 ```
 @article{chen2023valor,
   title={VALOR: Vision-Audio-Language Omni-Perception Pretraining Model and Dataset},
