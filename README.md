@@ -224,12 +224,17 @@ For example: finetuning text-to-audio retrieval  'ret%ta'
 
 
 
-<!-- 
-## Citation
+
+Citation
 
 If you find this code useful for your research, please consider citing:
 ```
-
+@article{chen2023valor,
+  title={VALOR: Vision-Audio-Language Omni-Perception Pretraining Model and Dataset},
+  author={Chen, Sihan and He, Xingjian and Guo, Longteng and Zhu, Xinxin and Wang, Weining and Tang, Jinhui and Liu, Jing},
+  journal={arXiv preprint arXiv:2304.08345},
+  year={2023}
+}
 ```
 
 ## License
