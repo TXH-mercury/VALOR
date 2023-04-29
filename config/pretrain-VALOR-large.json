@@ -32,180 +32,132 @@
     "seed": 50,
     "fp16": true,
     "pin_mem": true,
-    "data_cfg":{"train":  
-                        [
-                            {"datasets":
-                            [{"name": "audioset_pt",
-                          "ids_path": "./datasets/audioset/AudiosetCap_unbalanced_train_ids.json",
-                          "txt": "./datasets/audioset/txt_mapper_en.json",
-                          "video": "./datasets/audioset/frames_1fps_360*480_jpg",
-                          "audio": "./datasets/audioset/audio_22050hz",
-                          "datatype": "video"}],
-                          "video_sample_num": 2,
-                          "audio_sample_num": 1,
-                          "max_txt_len":40,
-                          "task" : "pt_contra%tv%tva%ta_caption%tv%tva%ta",
-                          "epoch": 32,
-                          "n_workers":4,
-                          "batch_size": 512},
-                          {"datasets":
-                          [{"name": "webvid",
-                          "ids_path": "./datasets/webvid/train_id.json",
-                          "txt": "./datasets/webvid/txt_mapper.json_sampletop10.json",
-                          "video": "./datasets/webvid/webvid_frames_10/train",
-                              "datatype": "video"}],
-                              "video_sample_num": 1, 
-                              "max_txt_len":40,
-                              "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                              "epoch": 20,
-                              "n_workers":4,
-                              "batch_size": 1024},
-                          {"datasets":
-                            [{"name": "cc3m",
-                              "ids_path": "./datasets/cc3m/train_id.json",
-                              "txt": "./datasets/cc3m/txt_mapper.json.json",
-                              "video": "./datasets/cc3m/training",
-                              "datatype": "image"}],
-                              "max_txt_len":40,
-                                "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                                "epoch": 20,
-                                "n_workers":4,
-                                "batch_size": 1024},
-                        {"datasets":
-                        [{"name": "cc12m",
-                            "ids_path": "./datasets/cc12m/train_id.json",
-                            "txt": "./datasets/cc12m/txt_mapper.json.json",
-                            "video": "./datasets/cc12m/all_images",
-                            "datatype": "image"}],
-                            "max_txt_len":40,
-                            "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                            "epoch": 12,
-                            "n_workers":12,
-                            "batch_size": 1024},
+    "data_cfg": {
+        "train": [
 
-                        {"datasets":
-                        [{"name": "coco",
+            {
+                "datasets": [
+                    {
+                        "name": "valor-1m",
+                        "ids_path": "./datasets/valor-1m/pretrain_ids.json",
+                        "txt": "./datasets/valor-1m/pretrain_txt_mapper.json",
+                        "video": "./datasets/valor-1m/frames_1fps_360*480_jpg",
+                        "audio": "./datasets/valor-1m/audio_22050hz",
+                        "datatype": "video"
+                    }
+                ],
+                "video_sample_num": 2,
+                "audio_sample_num": 1,
+                "max_txt_len": 40,
+                "task": "pt_contra%tva%tv%ta_caption%tva%tv%ta",
+                "epoch": 32,
+                "n_workers": 4,
+                "batch_size": 512
+            },
+
+            {
+                "datasets": [
+                    {
+                        "name": "webvid",
+                        "ids_path": "./datasets/webvid/train_id.json",
+                        "txt": "./datasets/webvid/txt_mapper.json_sampletop10.json",
+                        "video": "./datasets/webvid/webvid_frames_10/train",
+                        "datatype": "video"
+                    }
+                ],
+                "video_sample_num": 1,
+                "max_txt_len": 40,
+                "task": "pt_contra%tv_caption%tv_mlm%tv",
+                "epoch": 20,
+                "n_workers": 4,
+                "batch_size": 1024
+            },
+            {
+                "datasets": [
+                    {
+                        "name": "cc3m",
+                        "ids_path": "./datasets/cc3m/train_id.json",
+                        "txt": "./datasets/cc3m/txt_mapper.json.json",
+                        "video": "./datasets/cc3m/training",
+                        "datatype": "image"
+                    }
+                ],
+                "max_txt_len": 40,
+                "task": "pt_contra%tv_caption%tv_mlm%tv",
+                "epoch": 20,
+                "n_workers": 4,
+                "batch_size": 1024
+            },
+            {
+                "datasets": [
+                    {
+                        "name": "cc12m",
+                        "ids_path": "./datasets/cc12m/train_id.json",
+                        "txt": "./datasets/cc12m/txt_mapper.json.json",
+                        "video": "./datasets/cc12m/all_images",
+                        "datatype": "image"
+                    }
+                ],
+                "max_txt_len": 40,
+                "task": "pt_contra%tv_caption%tv_mlm%tv",
+                "epoch": 12,
+                "n_workers": 12,
+                "batch_size": 1024
+            },
+            {
+                "datasets": [
+                    {
+                        "name": "coco",
                         "ids_path": "./datasets/mscoco/karparthy_train_id.json",
                         "txt": "./datasets/mscoco/txt_mapper.json",
                         "video": "./datasets/mscoco/train2014",
-                            "datatype": "image"}],
-                            "max_txt_len":40,
-                            "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                            "epoch": 150,
-                            "n_workers":4,
-                            "batch_size": 1024},
-
-                            {"datasets":
-                            [{"name": "vg",
-                            "ids_path": "./datasets/vg/train_id_region.json",
-                            "txt": "./datasets/vg/txt_mapper_region.json",
-                            "video": "./datasets/vg/VG_100K",
-                                "datatype": "image"}],
-                                "max_txt_len":40,
-                                "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                                "epoch": 3,
-                                "n_workers":4,
-                                "batch_size": 1024},
-
-                        {"datasets":
-                            [{"name": "hdvila_pt",
-                            "ids_path": "./datasets/hdvila/train_id.json",
-                            "txt": "./datasets/hdvila/txt_mapper.json.json",
-                            "video": "./datasets/hdvila/frames_fps0.25",
-                            "datatype": "video"}],
-                            "video_sample_num": 1,
-                            "max_txt_len":40,
-                            "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                            "epoch": 10,
-                            "n_workers":8,
-                            "batch_size": 1024}],
-                    
-                "val":                
-                    [
-                        {
-                        "name": "audioset_pt",
-                        "ids_path": "./datasets/audioset/AudiosetCap_val_ids.json",
-                        "txt": "./datasets/audioset/txt_mapper_en.json",
-                        "video": "./datasets/audioset/frames_1fps_360*480_jpg",
-                        "audio": "./datasets/audioset/audio_22050hz",
-                        "datatype": "video", 
-                        "video_sample_num": 2,
-                        "audio_sample_num": 1,
-                        "max_txt_len":40,
-                        "n_workers":4,
-                        "task" : "pt_contra%tv%tva%ta_caption%tv%tva%ta_mlm%tv%tva%ta",
-                        "batch_size": 256 
-                     },
-                     {
-                        "name": "webvid",
-                        "ids_path": "./datasets/webvid/val_id.json",
-                        "txt": "./datasets/webvid/txt_mapper.json_sampletop10.json",
-                        "video": "./datasets/webvid/webvid_frames_10/train",
-                        "datatype": "video", 
-                        "video_sample_num": 1,
-                        "max_txt_len":40,
-                        "n_workers":4,
-                        "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                        "batch_size": 1024 
-                     },
-                    
-                     {
-                        "name": "cc3m",
-                        "ids_path": "./datasets/cc3m/val_id.json",
-                        "txt": "./datasets/cc3m/txt_mapper.json.json",
-                        "video": "./datasets/cc3m/training",
-                        "datatype": "image", 
-                        "max_txt_len":40,
-                        "n_workers":4,
-                        "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                        "batch_size": 1024 
-                     },
-                     {
-                        "name": "cc12m",
-                        "ids_path": "./datasets/cc12m/val_id.json",
-                        "txt": "./datasets/cc12m/txt_mapper.json.json",
-                        "video": "./datasets/cc12m/all_images",
-                        "datatype": "image", 
-                        "max_txt_len":40,
-                        "n_workers":4,
-                        "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                        "batch_size": 1024 
-                     },
-                     {
-                        "name": "coco",
-                        "ids_path": "./datasets/mscoco/karparthy_test_id.json",
-                        "txt": "./datasets/mscoco/txt_mapper.json",
-                        "video": "./datasets/mscoco/train2014",
-                        "datatype": "image", 
-                        "max_txt_len":40,
-                        "n_workers":4,
-                        "task" : "pt_contra%tv",
-                        "batch_size": 1024 
-                     },
-                     {
+                        "datatype": "image"
+                    }
+                ],
+                "max_txt_len": 40,
+                "task": "pt_contra%tv_caption%tv_mlm%tv",
+                "epoch": 150,
+                "n_workers": 4,
+                "batch_size": 1024
+            },
+            {
+                "datasets": [
+                    {
                         "name": "vg",
-                        "ids_path": "./datasets/vg/val_id_region.json",
+                        "ids_path": "./datasets/vg/train_id_region.json",
                         "txt": "./datasets/vg/txt_mapper_region.json",
                         "video": "./datasets/vg/VG_100K",
-                        "datatype": "image", 
-                        "max_txt_len":40,
-                        "n_workers":4,
-                        "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                        "batch_size": 1024 
-                     },
-                     {
+                        "datatype": "image"
+                    }
+                ],
+                "max_txt_len": 40,
+                "task": "pt_contra%tv_caption%tv_mlm%tv",
+                "epoch": 3,
+                "n_workers": 4,
+                "batch_size": 1024
+            },
+            {
+                "datasets": [
+                    {
                         "name": "hdvila_pt",
-                        "ids_path": "./datasets/hdvila/val_id.json",
+                        "ids_path": "./datasets/hdvila/train_id.json",
                         "txt": "./datasets/hdvila/txt_mapper.json.json",
                         "video": "./datasets/hdvila/frames_fps0.25",
-                        "datatype": "video", 
-                        "video_sample_num": 1,
-                        "max_txt_len":40,
-                        "n_workers":8,
-                        "task" : "pt_contra%tv_caption%tv_mlm%tv",
-                        "batch_size": 1024 
-                     }]}}
-
+                        "datatype": "video"
+                    }
+                ],
+                "video_sample_num": 1,
+                "max_txt_len": 40,
+                "task": "pt_contra%tv_caption%tv_mlm%tv",
+                "epoch": 10,
+                "n_workers": 8,
+                "batch_size": 1024
+            }
+        ],
+        "val": [
+           
+        ]
+    }
 
 
                      
