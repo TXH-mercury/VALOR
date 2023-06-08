@@ -1,89 +1,37 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-msr-vtt)](https://paperswithcode.com/sota/video-retrieval-on-msr-vtt?p=valor-vision-audio-language-omni-perception)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-activitynet)](https://paperswithcode.com/sota/video-retrieval-on-activitynet?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-vatex)](https://paperswithcode.com/sota/video-retrieval-on-vatex?p=valor-vision-audio-language-omni-perception)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-didemo)](https://paperswithcode.com/sota/video-retrieval-on-didemo?p=valor-vision-audio-language-omni-perception)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-lsmdc)](https://paperswithcode.com/sota/video-retrieval-on-lsmdc?p=valor-vision-audio-language-omni-perception)
-
-
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-captioning-on-vatex-1)](https://paperswithcode.com/sota/video-captioning-on-vatex-1?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-captioning-on-msr-vtt-1)](https://paperswithcode.com/sota/video-captioning-on-msr-vtt-1?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-captioning-on-msvd-1)](https://paperswithcode.com/sota/video-captioning-on-msvd-1?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-question-answering-on-msrvtt-qa)](https://paperswithcode.com/sota/video-question-answering-on-msrvtt-qa?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/tgif-frame-on-tgif-qa)](https://paperswithcode.com/sota/tgif-frame-on-tgif-qa?p=valor-vision-audio-language-omni-perception)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/visual-question-answering-on-msvd-qa-1)](https://paperswithcode.com/sota/visual-question-answering-on-msvd-qa-1?p=valor-vision-audio-language-omni-perception)
-
-
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-question-answering-on-activitynet-qa)](https://paperswithcode.com/sota/video-question-answering-on-activitynet-qa?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-visual-question-answering-on-music-avqa)](https://paperswithcode.com/sota/audio-visual-question-answering-on-music-avqa?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/text-to-audiovisual-retrieval-on-valor-32k)](https://paperswithcode.com/sota/text-to-audiovisual-retrieval-on-valor-32k?p=valor-vision-audio-language-omni-perception)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-visual-captioning-on-valor-32k)](https://paperswithcode.com/sota/audio-visual-captioning-on-valor-32k?p=valor-vision-audio-language-omni-perception)
-
-
-
-
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/text-to-audio-retrieval-on-clotho)](https://paperswithcode.com/sota/text-to-audio-retrieval-on-clotho?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/text-to-audio-retrieval-on-audiocaps)](https://paperswithcode.com/sota/text-to-audio-retrieval-on-audiocaps?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-captioning-on-clotho)](https://paperswithcode.com/sota/audio-captioning-on-clotho?p=valor-vision-audio-language-omni-perception)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-captioning-on-audiocaps)](https://paperswithcode.com/sota/audio-captioning-on-audiocaps?p=valor-vision-audio-language-omni-perception)
-
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/image-captioning-on-coco-captions)](https://paperswithcode.com/sota/image-captioning-on-coco-captions?p=valor-vision-audio-language-omni-perception)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/visual-question-answering-on-vqa-v2-test-std)](https://paperswithcode.com/sota/visual-question-answering-on-vqa-v2-test-std?p=valor-vision-audio-language-omni-perception)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
 # VALOR: Vision-Audio-Language Omni-Perception Pretraining Model and Dataset
+
+<div align=center><img src=img/img_radar.png/ width="75%" height="75%"></div>
+
 - This is the official repository of VALOR which provides training&testing code and pretraining checkpoints.
 - VALOR-32K dataset (annotation) can be downloaded from  [project page](https://casia-iva-group.github.io/projects/VALOR/download.html). Raw videos can be downloaded from YouTube.
 - VALOR-1m will be released after paper is accepted.
 - Paper w/o audio files embeded in PDF is on [Arxiv](https://arxiv.org/abs/2304.08345).
 - Paper w audio files embeded in PDF can be found on [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
 - We have proposed a  more stronger vision-audio-subtitle-text model (VAST), [paper](https://arxiv.org/abs/2305.18500),[github page](https://github.com/TXH-mercury/VAST/tree/main).
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-msr-vtt)](https://paperswithcode.com/sota/video-retrieval-on-msr-vtt?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-activitynet)](https://paperswithcode.com/sota/video-retrieval-on-activitynet?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-vatex)](https://paperswithcode.com/sota/video-retrieval-on-vatex?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-didemo)](https://paperswithcode.com/sota/video-retrieval-on-didemo?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-lsmdc)](https://paperswithcode.com/sota/video-retrieval-on-lsmdc?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-captioning-on-vatex-1)](https://paperswithcode.com/sota/video-captioning-on-vatex-1?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-captioning-on-msr-vtt-1)](https://paperswithcode.com/sota/video-captioning-on-msr-vtt-1?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-captioning-on-msvd-1)](https://paperswithcode.com/sota/video-captioning-on-msvd-1?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-question-answering-on-msrvtt-qa)](https://paperswithcode.com/sota/video-question-answering-on-msrvtt-qa?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/tgif-frame-on-tgif-qa)](https://paperswithcode.com/sota/tgif-frame-on-tgif-qa?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/visual-question-answering-on-msvd-qa-1)](https://paperswithcode.com/sota/visual-question-answering-on-msvd-qa-1?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-question-answering-on-activitynet-qa)](https://paperswithcode.com/sota/video-question-answering-on-activitynet-qa?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-visual-question-answering-on-music-avqa)](https://paperswithcode.com/sota/audio-visual-question-answering-on-music-avqa?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/text-to-audiovisual-retrieval-on-valor-32k)](https://paperswithcode.com/sota/text-to-audiovisual-retrieval-on-valor-32k?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-visual-captioning-on-valor-32k)](https://paperswithcode.com/sota/audio-visual-captioning-on-valor-32k?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/text-to-audio-retrieval-on-clotho)](https://paperswithcode.com/sota/text-to-audio-retrieval-on-clotho?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/text-to-audio-retrieval-on-audiocaps)](https://paperswithcode.com/sota/text-to-audio-retrieval-on-audiocaps?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-captioning-on-clotho)](https://paperswithcode.com/sota/audio-captioning-on-clotho?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/audio-captioning-on-audiocaps)](https://paperswithcode.com/sota/audio-captioning-on-audiocaps?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/image-captioning-on-coco-captions)](https://paperswithcode.com/sota/image-captioning-on-coco-captions?p=valor-vision-audio-language-omni-perception)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/visual-question-answering-on-vqa-v2-test-std)](https://paperswithcode.com/sota/visual-question-answering-on-vqa-v2-test-std?p=valor-vision-audio-language-omni-perception)
+
+<div align=center><img src=img/img_model.png/></div>
 
 ## Building Environment
 - VALOR is implemented based on Pytorch. We use pytorch-1.9.0 and cuda-11.1. Other version could be also compatible.
