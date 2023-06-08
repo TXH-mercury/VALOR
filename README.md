@@ -83,7 +83,7 @@
 - VALOR-1m will be released after paper is accepted.
 - Paper w/o audio files embeded in PDF is on [Arxiv](https://arxiv.org/abs/2304.08345).
 - Paper w audio files embeded in PDF can be found on [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
-
+- We have proposed a  more stronger vision-audio-subtitle-text model (VAST), [paper](https://arxiv.org/abs/2305.18500),[github page](https://github.com/TXH-mercury/VAST/tree/main).
 
 ## Building Environment
 - VALOR is implemented based on Pytorch. We use pytorch-1.9.0 and cuda-11.1. Other version could be also compatible.
