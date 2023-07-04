@@ -366,7 +366,7 @@ class VALORDataset(Dataset):
 
         if self.video_mapper is not None:
             video_pixels = self.video_mapper[id_]
-            if video_pixels is None: ###wrong img/video and needs to resample 
+            if video_pixels is None and self.training: ###wrong img/video and needs to resample 
                 resample_idx = random.choice(self.idx)
                 LOGGER.info(f'current idx {id_} from {self.dataset_name} returns wrong image/video, use {resample_idx} instead.')
                 return self.__getitem__(resample_idx)
@@ -374,7 +374,7 @@ class VALORDataset(Dataset):
 
         if self.audio_mapper is not None:   
             audio_spectrograms = self.audio_mapper[id_]
-            if audio_spectrograms is None: ### wrong audio and needs to resample
+            if audio_spectrograms is None and self.training: ### wrong audio and needs to resample
                 resample_idx = random.choice(self.idx)
                 LOGGER.info(f'current idx {id_} from {self.dataset_name} returns wrong audio, use {resample_idx} instead.')
                 return self.__getitem__(resample_idx)
