@@ -54,11 +54,14 @@ sh preinstall.sh
 ## Download Checkpoints
 - [pretrained_weights](https://drive.google.com/file/d/1KyqOzQIzNcL1Q9uEGmDECHfU-8CCd4kk/view?usp=sharing) (BERT,CLIP,VideoSwin).
 Put pretrained_weights dir under main path. (VALOR/pretrained_weights)
-- [VALOR-base](https://drive.google.com/file/d/1l-G255vTPt6XKMK-Ln42Jz_raGzipL84/view?usp=sharing).
-Put VALOR-base  under the output dir. (VALOR/output/VALOR-base)
-- [VALOR-large](https://drive.google.com/file/d/1qFb9ejO-FLUTfZQkW_IFJrFEWyxjs72k/view?usp=sharing).
-Put VALOR-large  under the output dir. (VALOR/output/VALOR-large)
+- VALOR models.
 
+| Model   | Pretrained Ckpt | Finetuned Ckpt on MSRVTT-Retrieval | Finetuned Ckpt on MSRVTT-Caption |
+|---------|-----------------|------------------------------------|----------------------------------|
+| VALOR-B |       [VALOR-base](https://drive.google.com/file/d/1l-G255vTPt6XKMK-Ln42Jz_raGzipL84/view?usp=sharing)      |                VALOR_base_msr_ret.pt                |               VALOR_base_msr_cap.pt               |
+| VALOR-L |       [VALOR-large](https://drive.google.com/file/d/1qFb9ejO-FLUTfZQkW_IFJrFEWyxjs72k/view?usp=sharing)      |                VALOR_large_msr_ret.pt                |               VALOR_base_msr_cap.pt               |
+
+Put VALOR-base and VALOR-large under the output dir. (VALOR/output/VALOR-base, VALOR/output/VALOR-large)
 
 ## Prepare Datasets
 VALOR is pretrained and tested on multiple vision-language, audio-language and audiovisual-language datasets. 
