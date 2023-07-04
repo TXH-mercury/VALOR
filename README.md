@@ -6,8 +6,8 @@
 - VALOR-32K dataset (annotation) can be downloaded from  [project page](https://casia-iva-group.github.io/projects/VALOR/download.html). Raw videos can be downloaded from YouTube.
 - VALOR-1M will be released after paper is accepted.
 - Paper w audio files embeded in PDF can be found on [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
-- We have proposed a   stronger vision-audio-subtitle-text foundation model (VAST), [paper](https://arxiv.org/abs/2305.18500),[github page](https://github.com/TXH-mercury/VAST/tree/main).
-- We have proposed a  new strong vision-language pretraining model (COSA), [paper](https://arxiv.org/abs/2306.09085),[github page](https://github.com/TXH-mercury/COSA).
+- We have proposed a   stronger ##vision-audio-subtitle-text foundation model (VAST)##, [Paper](https://arxiv.org/abs/2305.18500), [Github page](https://github.com/TXH-mercury/VAST/tree/main).
+- We have proposed a  new strong ##video-language pretraining model (COSA)##, [Paper](https://arxiv.org/abs/2306.09085), [Code](https://github.com/TXH-mercury/COSA).
 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-msr-vtt)](https://paperswithcode.com/sota/video-retrieval-on-msr-vtt?p=valor-vision-audio-language-omni-perception)
