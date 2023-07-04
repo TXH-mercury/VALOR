@@ -12,6 +12,10 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --nproc_
 --train_video_sample_num 6 \
 --test_video_sample_num 10  \
 
+# --zero_shot \
+# --checkpoint PATH/TO/CKPT
+
+
 
 # valor32k cap
 
