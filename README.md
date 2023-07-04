@@ -4,10 +4,11 @@
 
 - This is the official repository of VALOR which provides training&testing code and pretraining checkpoints.
 - VALOR-32K dataset (annotation) can be downloaded from  [project page](https://casia-iva-group.github.io/projects/VALOR/download.html). Raw videos can be downloaded from YouTube.
-- VALOR-1m will be released after paper is accepted.
-- Paper w/o audio files embeded in PDF is on [Arxiv](https://arxiv.org/abs/2304.08345).
+- VALOR-1M will be released after paper is accepted.
 - Paper w audio files embeded in PDF can be found on [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
-- We have proposed a  more stronger vision-audio-subtitle-text model (VAST), [paper](https://arxiv.org/abs/2305.18500),[github page](https://github.com/TXH-mercury/VAST/tree/main).
+- We have proposed a   stronger vision-audio-subtitle-text foundation model (VAST), [paper](https://arxiv.org/abs/2305.18500),[github page](https://github.com/TXH-mercury/VAST/tree/main).
+- We have proposed a  new strong vision-language pretraining model (COSA), [paper](https://arxiv.org/abs/2306.09085),[github page]([https://github.com/TXH-mercury/VAST/tree/main](https://github.com/TXH-mercury/COSA).
+
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-msr-vtt)](https://paperswithcode.com/sota/video-retrieval-on-msr-vtt?p=valor-vision-audio-language-omni-perception)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/valor-vision-audio-language-omni-perception/video-retrieval-on-activitynet)](https://paperswithcode.com/sota/video-retrieval-on-activitynet?p=valor-vision-audio-language-omni-perception)
