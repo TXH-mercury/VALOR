@@ -58,8 +58,8 @@ Put pretrained_weights dir under main path. (VALOR/pretrained_weights)
 
 | Model   | Pretrained Ckpt | Finetuned Ckpt on MSRVTT-Retrieval | Finetuned Ckpt on MSRVTT-Caption |
 |---------|-----------------|------------------------------------|----------------------------------|
-| VALOR-B |       [VALOR-base](https://drive.google.com/file/d/1l-G255vTPt6XKMK-Ln42Jz_raGzipL84/view?usp=sharing)      |                VALOR_base_msr_ret.pt                |               VALOR_base_msr_cap.pt               |
-| VALOR-L |       [VALOR-large](https://drive.google.com/file/d/1qFb9ejO-FLUTfZQkW_IFJrFEWyxjs72k/view?usp=sharing)      |                VALOR_large_msr_ret.pt                |               VALOR_base_msr_cap.pt               |
+| VALOR-B |       [VALOR-base](https://drive.google.com/file/d/1l-G255vTPt6XKMK-Ln42Jz_raGzipL84/view?usp=sharing)      |                [VALOR_base_msr_ret.pt](https://drive.google.com/file/d/1-YrVWKJUwKHTocikN4bvo62Wu78aZhHb/view?usp=sharing)                |               [VALOR_base_msr_cap.pt](https://drive.google.com/file/d/1-mzhin9n9iSCDMjMpAXS8jT2vUHlFN5f/view?usp=sharing)               |
+| VALOR-L |       [VALOR-large](https://drive.google.com/file/d/1qFb9ejO-FLUTfZQkW_IFJrFEWyxjs72k/view?usp=sharing)      |                [VALOR_large_msr_ret.pt](https://drive.google.com/file/d/1-XViAyPRovm5WaaN5f1Heh9gPXdqcKBY/view?usp=sharing)                |               [VALOR_large_msr_cap.pt](https://drive.google.com/file/d/1-i_1yfZUMIXbTL8PSM0WtmSguu2eN-kk/view?usp=sharing)               |
 
 Put VALOR-base and VALOR-large under the output dir. (VALOR/output/VALOR-base, VALOR/output/VALOR-large)
 
