@@ -10,7 +10,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --nproc_
 --test_video_sample_num 8  \
 --save_best true \
 
-
+# --zero_shot \
+# --checkpoint PATH/TO/CKPT
 
 
 
