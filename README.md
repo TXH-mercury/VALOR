@@ -145,6 +145,18 @@ sh scripts/pretrain.sh
 ```
 
 
+## Inference
+
+For QA task
+```
+python inference.py --video_path $VIDEOPATH --task 'qa%tva' --model_dir $MODELDIR --question 'what is in the video'
+```
+
+For caption task
+```
+python inference.py --video_path $VIDEOPATH --task 'cap%tva' --model_dir $MODELDIR 
+```
+
 ## Customize
 VALOR's framework is easy to expand new tasks/datasets. what you need to do is 
 
