@@ -102,7 +102,7 @@ The processed  dataset path should be as follows:
     │   │   ├── txt_mapper_vqa.json    
     │   │   └── caption_annotation.json    
 ```
-We provide processed json files for most finetuneing datasets [here](https://drive.google.com/file/d/1pWym3bMNW_WrOZCi5Ls-wKFpaPMbLOio/view?usp=sharing), and you only need to download and extract raw videos of each dataset.
+We provide processed json files for most finetuneing datasets [here](https://drive.google.com/file/d/1WbtLUoIGzTi-mxQcnuJvziYaGYvYj4ti/view?usp=sharing), and you only need to download and extract raw videos of each dataset.
 
 
 ## Finetune  Model
