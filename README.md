@@ -3,8 +3,8 @@
 <div align=center><img src=img/img_radar.png/ width="75%" height="75%"></div>
 
 - This is the official repository of VALOR which provides training&testing code and pretraining checkpoints.
-- VALOR-32K dataset (annotation) can be downloaded from  [BaiduDiskLink](https://pan.baidu.com/s/108zZgtjDjLpTUQ_O20OwyQ?pwd=7c0n). Raw videos can be downloaded from YouTube.
-- VALOR-1M will be released after paper is accepted.
+- VALOR-32K dataset (annotation) can be downloaded from  [BaiduDiskLink](https://pan.baidu.com/s/1Hq6VvAdKlPcq7j737ZXdbA?pwd=qiw1). Raw videos can be downloaded from [BaiduDiskLink](https://pan.baidu.com/s/1aHWCwUOX1lJi0lSsmJb6Tw?pwd=e3ve).
+- VALOR-1M dataset (annotation) can be downloaded from [BaiduDiskLink](https://pan.baidu.com/s/17EAihs9i66BaP9JEsmL8og?pwd=z9q3) Raw videos can be downloaded from YouTube.
 - Paper w audio files embeded in PDF can be found on [project page](https://casia-iva-group.github.io/projects/VALOR/download.html).
 - We have proposed a   stronger **vision-audio-subtitle-text omni-modality foundation model (VAST)**, [Paper](https://arxiv.org/abs/2305.18500), [Github page](https://github.com/TXH-mercury/VAST/tree/main).
 - We have proposed a  new strong **video-language pretraining model (COSA)**, [Paper](https://arxiv.org/abs/2306.09085), [Code](https://github.com/TXH-mercury/COSA).
